@@ -55,7 +55,7 @@ for i in range(10000):
     optimizer.step()
     
     if i % 1000 == 0:
-        print(L.item())
+        print(f"Epoch: {i} | Loss: {L.item()}")
 
 print("Done")
 print(f"Beta: {model.b.item()}")

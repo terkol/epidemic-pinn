@@ -6,7 +6,7 @@ import torch
 def load_latest_run_data():
     run_path = Path(__file__).parents[2] / "run"    
 
-    newest_file = max(run_path.iterdir(), key=lambda f: f.stat().st_birthtime if f.is_file() and f.name[-3:] == "txt" else 0)
+    newest_file = max(run_path.iterdir(), key=lambda f: f.stat().st_mtime if f.is_file() and f.name[-3:] == "txt" else 0)
     run = pd.read_csv(newest_file)
 
     inputs = newest_file.name.split(sep="_")
