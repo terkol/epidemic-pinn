@@ -1,0 +1,4 @@
+report
+bin
+build
+src/pinn/__pycache__
