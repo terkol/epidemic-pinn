@@ -6,11 +6,9 @@ class PINN(nn.Module):
     def __init__(self):
         super().__init__()
         self.n = nn.Sequential(
-            nn.Linear(1,32), 
+            nn.Linear(1,16), 
             nn.Tanh(), 
-            nn.Linear(32, 32), 
-            nn.Tanh(), 
-            nn.Linear(32, 3), 
+            nn.Linear(16, 3), 
             nn.Softmax(1))
         self.b = nn.Parameter(torch.tensor([0.5]))
         self.g = nn.Parameter(torch.tensor([0.5]))

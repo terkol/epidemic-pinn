@@ -28,8 +28,6 @@ epidemic-pinn/
 └── Project-Report.txt                # Original academic scientific report
 
 ```
-
-
 ## Component 1: The Stochastic Spatial Simulator (Fortran 90)
 
 The ground-truth data generator is a high-performance, discrete-time, 2D spatial Agent-Based Model. Agents (walkers) navigate a grid subject to periodic boundary conditions via an unbiased random-walk protocol. State transitions are determined entirely by local interactions rather than global mixing. Infection requires an absolute spatial collision—sharing an exact coordinate—coupled with a successful stochastic transmission roll. Conversely, recovery is determined by an independent probability evaluated for each infected agent at every time step. During execution, the simulator logs both the discrete spatial histories (`epidemic.xyz`) and the macroscopic state counts into the `run/` directory.
