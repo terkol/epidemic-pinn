@@ -41,11 +41,11 @@ The PyTorch module operates as a continuous, temporal calculus graph utilizing `
 
 A primary scientific result of this pipeline is demonstrating the PINN's ability to natively quantify spatial correction factors when mapping a 2D grid simulation to a 0D continuous ODE (a Mean-Field Approximation). Given the default Fortran input probabilities, the theoretical well-mixed transmission rate is $\beta = 0.05$ and the recovery rate is $\gamma = 0.01$. While the PyTorch optimizer flawlessly converges on the exact recovery rate ($\gamma \approx 0.01$), it discovers an effective transmission rate of $\beta \approx 0.03$. This mathematically demonstrates that the spatial constraints of a 2D grid, where newly infected agents are physically isolated by local clusters of immune or already-infected agents, suppress transmission by approximately 40% compared to a perfectly mixed theoretical population. The network successfully assimilates this non-linear spatial clustering (local depletion of susceptibles) into a static ODE parameter.
 
-### The Mathematics
+### Lambda-weighting
 
-To ensure stable convergence and prevent trivial solution collapse, the loss function implements stringent $\lambda$-weighting ($1 \times 10^{-6}$) to balance the squared ODE residuals ($\mathcal{L}_{physics}$) against the empirical mean squared error ($\mathcal{L}_{data}$). This  accounts for the temporal chain-rule scaling induced by $t \in [0, 1]$ normalization.
+To ensure stable convergence and prevent trivial solution collapse, the loss function implements stringent $\lambda$-weighting ($1 \times 10^{-6}$) to balance the squared ODE residuals ($\mathcal{L}_ {physics}$) against the empirical mean squared error ($\mathcal{L}_ {data}$). This accounts for the temporal chain-rule scaling induced by $t \in [0, 1]$ normalization.
 
-$\mathcal{L} = \mathcal{L}_{data} + \lambda \mathcal{L}_{physics}$
+$$\mathcal{L} = \mathcal{L}_{data} + \lambda \mathcal{L}_{physics}$$
 
 ## Execution Instructions
 
