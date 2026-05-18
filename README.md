@@ -7,9 +7,9 @@ An end-to-end Scientific Machine Learning (SciML) pipeline bridging a discrete s
 ```text
 epidemic-pinn/
 ├── bin/
-│   └── epidemic_simulator            # Compiled Fortran executable
-├── build/                            # Compiled object files (*.o)
-├── report/                           # Academic figures and Rmd files
+│   └── epidemic_simulator            # Compiled Fortran executable (.gitignore)
+├── build/                            # Compiled object files (*.o) (.gitignore)
+├── report/                           # Academic figures and Rmd files (.gitignore)
 ├── run/
 │   ├── 500_100_1000_100...txt        # Empirical fraction trajectories
 │   └── epidemic.xyz                  # Spatial trajectory history (.gitignore)
