@@ -2,3 +2,4 @@ report
 bin
 build
 src/pinn/__pycache__
+run/epidemic.xyz

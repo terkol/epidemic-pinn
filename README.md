@@ -43,7 +43,7 @@ A primary scientific result of this pipeline is demonstrating the PINN's ability
 
 ### Lambda-weighting
 
-To ensure stable convergence and prevent trivial solution collapse, the loss function implements stringent $\lambda$-weighting ($1 \times 10^{-6}$) to balance the squared ODE residuals ($\mathcal{L}_ {physics}$) against the empirical mean squared error ($\mathcal{L}_ {data}$). This accounts for the temporal chain-rule scaling induced by $t \in [0, 1]$ normalization.
+To ensure stable convergence and prevent trivial solution collapse, the loss function implements $\lambda$-weighting ($1 \times 10^{-6}$) to balance the squared ODE residuals ($\mathcal{L}_ {physics}$) against the empirical mean squared error ($\mathcal{L}_ {data}$). This accounts for the temporal chain-rule scaling caused by the $t \in [0, 1]$ normalization.
 
 $$\mathcal{L} = \mathcal{L}_{data} + \lambda \mathcal{L}_{physics}$$
 
